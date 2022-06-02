@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment JS2</title>
+</head>
+<body>
+    <ul class="forecast" id="forecast">
+
+    </ul>
+<script type="text/javascript">
+    function loadingWeather() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {//da gui len hoan thanh va nhan ket qua{
+                var currentWeather = JSON.parse(xhttp.responseText);
+                var list = currentWeather.list;
+                for (var i = 0; i < list.length; i++) {
+                    var ngaygio = list[i].dt_txt;
+                    var nd = list[i].main.temp;
+                    var ds = list[i].weather[0].description;
+                    var icon = list[i].weather[0].icon
+                    var li_html = "<li>\n" +
+                        "            <p>" + ngaygio + "</p>\n" +
+                        "            <h3>" + nd + "<sup>o</sup>c</h3>\n" +
+                        "            <p>" + ds + "</p>\n" +
+                        "            <img src=\"http://openweathermap.org/img/wn/" + icon + "@2x.png\"/>\n" +
+                        "        </li>";
+
+                    document.getElementById("forecast").innerHTML += li_html;
+                }
+            }
+
+        };
+        xhttp.open("GET", "https://api.openweathermap.org/data/2.5/forecast?q=Hanoi,vietnam&appid=09a71427c59d38d6a34f89b47d75975c&units=metric", true);
+        xhttp.send();
+    }
+    loadingWeather();
+</script>
+</body>
+</html>
