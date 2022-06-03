@@ -6,7 +6,8 @@ body{
 
 .card{
 
-    width: 400px;
+    width: 800px;
+    height: 775px;
     border:none;
 
 }
@@ -47,8 +48,8 @@ body{
 
 .nav-pills .nav-link {
     border-radius: 0px;
-    border-bottom: 1px solid #0d6efd40;
-
+    border-bottom: none;
+    height: 100px;
 }
 
 .nav-item{
@@ -84,5 +85,56 @@ body{
     float: left;
 }
 a{
+    color: none;
     text-decoration: none;
+}
+.forgot{
+    margin-top: 40px;
+}
+#pills-home-tab\ logincolor{
+    background-color: #fff;
+    color: black;
+}
+#pills-profile-tab\ registercolor{
+    background-color: #E1E1E1;
+    color: #fff;
+}
+label{
+    text-transform: uppercase;
+}
+#signin{
+    height: 80px;
+    background-color: #00AB6F;
+}
+.form-control{
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.face{
+    height: 150px;
+    background-color: #005FA3;
+    margin-top: 20px;
+}
+.icon{
+    width: calc(25% - 40px);
+    padding: 10px;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 20px;
+}
+.facebook{
+    width: calc(75% - 60px);
+    padding: 20px;
+    font-size: 16px;
+    text-align: left;
+    margin-top: 10px;
+}
+span{
+    color: #fff;
+}
+.google{
+    height: 150px;
+    background-color: #E42D4B;
 }
